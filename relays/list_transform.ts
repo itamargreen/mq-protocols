@@ -8,12 +8,18 @@ import { Message } from "mhub";
  */
 export default function(msg: Message): void|Message|Message[]|Promise<Message> {
 	if (msg.topic === "scores:ranking") {
-		let modified = msg.clone();
-		var old_data = delete msg.data;
+		let result = msg.clone();
+		let old_data = result.data;
+		result.data = {};
 
-		modified.topic = "list:setArray";
+		result.data.header = old_data.stage.name;
+		result.data.data = old_data.ranking.map(function(rank) {
+			return [rank.team.name, rank.team.number, rank.highest];
+		});
 
-		return modified;
+		result.topic = 'list:setArray';
+
+		return result;
 	}
 	// In all other cases, nothing is returned, basically discarding the
 	// received message.

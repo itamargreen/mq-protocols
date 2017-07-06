@@ -6,10 +6,15 @@ exports.__esModule = true;
  */
 function default_1(msg) {
     if (msg.topic === "scores:ranking") {
-        var modified = msg.clone();
-        var old_data = delete msg.data;
-        modified.topic = "list:setArray";
-        return modified;
+        var result = msg.clone();
+        var old_data = result.data;
+        result.data = {};
+        result.data.header = old_data.stage.name;
+        result.data.data = old_data.ranking.map(function (rank) {
+            return [rank.team.name, rank.team.number, rank.highest];
+        });
+        result.topic = 'list:setArray';
+        return result;
     }
     // In all other cases, nothing is returned, basically discarding the
     // received message.
