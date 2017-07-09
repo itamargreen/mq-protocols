@@ -5,7 +5,7 @@
 	"bindings": {
 		"table": {
 			"input": [
-				{ "node": "local/default", "pattern": "*" }
+				{ "node": "local/default", "pattern": "scores:ranking" }
 			],
 			"transform": "table_transform.js",
 			"output": [

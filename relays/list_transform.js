@@ -1,22 +1,17 @@
+/*
+ * This function transforms the scores:ranking message from the fllscoring service
+ * To a message that can be accepted by the list module in the displaySystem service.
+ */
 "use strict";
 exports.__esModule = true;
-/**
- * @param msg Message just received on this binding.
- * @return Message(s), promise for message(s), or void
- */
+var mhub_1 = require("mhub");
 function default_1(msg) {
-    if (msg.topic === "scores:ranking") {
-        var result = msg.clone();
-        var old_data = result.data;
-        result.data = {};
-        result.data.header = old_data.stage.name;
-        result.data.data = old_data.ranking.map(function (rank) {
+    var data = {
+        header: msg.stage.name,
+        data: msg.ranking.map(function (rank) {
             return [rank.team.name, rank.team.number, rank.highest];
-        });
-        result.topic = 'list:setArray';
-        return result;
-    }
-    // In all other cases, nothing is returned, basically discarding the
-    // received message.
+        })
+    };
+    return new mhub_1.Message('list:setArray', data);
 }
 exports["default"] = default_1;

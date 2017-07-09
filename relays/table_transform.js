@@ -1,9 +1,10 @@
+/*
+ * This function transforms the scores:ranking message from the fllscoring service
+ * To a message that can be accepted by the table module in the displaySystem service.
+ */
 "use strict";
 exports.__esModule = true;
-/**
- * @param msg Message just received on this binding.
- * @return Message(s), promise for message(s), or void
- */
+var mhub_1 = require("mhub");
 var ROUND = "Round";
 var NUMBER = "No.";
 var NAME = "Name";
@@ -16,22 +17,16 @@ function roundsArray(rounds) {
     return arr;
 }
 function default_1(msg) {
-    if (msg.topic === "scores:ranking") {
-        var result = msg.clone();
-        var old_data = result.data;
-        result.data = {};
-        var rounds = roundsArray(old_data.stage.rounds);
-        result.data.header = [NUMBER, NAME, TOP].concat(rounds);
-        result.data.data = old_data.ranking.map(function (rank) {
+    var rounds = roundsArray(msg.data.stage.rounds);
+    var data = {
+        header: [NUMBER, NAME, TOP].concat(rounds),
+        data: msg.data.ranking.map(function (rank) {
             var scores = rank.scores.map(function (score) {
                 return score || 0;
             });
             return [rank.team.number, rank.team.name, rank.highest].concat(scores);
-        });
-        result.topic = "table:setData";
-        return result;
-    }
-    // In all other cases, nothing is returned, basically discarding the
-    // received message.
+        })
+    };
+    return new mhub_1.Message('table:setData', data);
 }
 exports["default"] = default_1;
