@@ -12,7 +12,7 @@ var TOP = "Highest";
 function roundsArray(rounds) {
     var arr = [];
     for (var i = 0; i < rounds; i++) {
-        arr.push(ROUND + ' ' + i);
+        arr.push(ROUND + ' ' + (i + 1));
     }
     return arr;
 }

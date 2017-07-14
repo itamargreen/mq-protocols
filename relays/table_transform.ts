@@ -14,7 +14,7 @@ const TOP = "Highest";
 function roundsArray(rounds: number): string[] {
 	let arr = [];
 	for(let i = 0; i < rounds; i++) {
-		arr.push(ROUND + ' ' + i);
+		arr.push(ROUND + ' ' + (i+1));
 	}
 	return arr;
 }
