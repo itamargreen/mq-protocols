@@ -27,7 +27,7 @@ export default function(msg: Message): void|Message|Message[]|Promise<Message> {
 		header: [RANK, NUMBER, NAME, TOP].concat(rounds),
 		data: msg.data.ranking.map(function(rank, index) {
 			var scores = rank.scores.map((score) => score || 0);
-			return [index, rank.team.number, rank.team.name, rank.highest].concat(scores);
+			return [rank.rank, rank.team.number, rank.team.name, rank.highest].concat(scores);
 		})
 	};
 
