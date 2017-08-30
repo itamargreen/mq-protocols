@@ -1,5 +1,5 @@
 {
-  "name": "@first-lego-league/protocols",
+  "name": "@first-lego-league/mq-protocols",
   "version": "0.0.1",
   "description": "For our FIRST LEGO League architecture, we use separate systems that can communicate via JSON REST api's or via websocket protocol. These are described here",
   "main": "index.js",
