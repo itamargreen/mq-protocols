@@ -21,9 +21,9 @@ function default_1(msg) {
     var rounds = roundsArray(msg.data.stage.rounds);
     var data = {
         header: [RANK, NUMBER, NAME, TOP].concat(rounds),
-        data: msg.data.ranking.map(function (rank, index) {
-            var scores = rank.scores.map(function (score) { return score || 0; });
-            return [index, rank.team.number, rank.team.name, rank.highest].concat(scores);
+        data: msg.data.ranking.map(function (rank) {
+            var scores = rank.scores.map(function (score) { return (score || { score: 0 }).score; });
+            return [rank.rank, rank.team.number, rank.team.name, rank.highest.score].concat(scores);
         })
     };
     return new mhub_1.Message('table:setData', data);
