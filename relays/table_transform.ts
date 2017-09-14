@@ -13,18 +13,18 @@ const TOP = "Best";
 
 function roundsArray(rounds: number): string[] {
 	let arr = [];
-	for(let i = 0; i < rounds; i++) {
-		arr.push((i+1).toString());
+	for (let i = 0; i < rounds; i++) {
+		arr.push((i + 1).toString());
 	}
 	return arr;
 }
 
-export default function(msg: Message): void|Message|Message[]|Promise<Message> {
+export default function (msg: Message): void | Message | Message[] | Promise<Message> {
 	let rounds = roundsArray(msg.data.stage.rounds);
 
 	let data = {
 		header: [RANK, NUMBER, NAME, TOP].concat(rounds),
-		data: msg.data.ranking.map(function(rank) {
+		data: msg.data.ranking.map(function (rank) {
 			var scores = rank.scores.map((score) => (score || { score: 0 }).score);
 			return [rank.rank, rank.team.number, rank.team.name, rank.highest.score].concat(scores);
 		})
