@@ -7,15 +7,14 @@
 import { Message } from "mhub";
 
 const RANK = "Rank";
-const ROUND = "Round";
 const NUMBER = "No.";
 const NAME = "Name";
-const TOP = "Highest";
+const TOP = "Best";
 
 function roundsArray(rounds: number): string[] {
 	let arr = [];
 	for(let i = 0; i < rounds; i++) {
-		arr.push(ROUND + ' ' + (i+1));
+		arr.push((i+1).toString());
 	}
 	return arr;
 }
