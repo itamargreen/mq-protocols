@@ -18,13 +18,12 @@
 		"admin": "admin",
 		"referee": "referee",
 		"scorekeeper": "scorekeeper",
-		"clock": "clock",
-		"score_diaply_relay": "relay"
+		"clock": "clock"
 	},
 	"rights": {
 		"": {
 			"subscribe": true,
-            "publish": false
+            "publish": ["table:*","list:*"]
 		},
 		"admin": true,
 		"referee": {
@@ -38,12 +37,6 @@
 			"publish": {
 				"default": "scores:*"
 			}	
-		},
-		"score_diaply_relay": {
-			"subscribe": true,
-			"publish": {
-				"default": ["table:*","list:*"]
-			}
 		},
 		"clock": {
 			"subscribe": true,
