@@ -9,18 +9,18 @@ module.exports = {
           "./challenges"],
     users: [{
         username: 'admin',
-        password: 'admin',
+        password: 'admin_password',
         pages: ['scoresheet','teams','scores','ranking','settings'],
-        mhubPassword: 'adpass'
+        mhubPassword: 'admin_password'
     }, {
         username: 'ref',
-        password: 'ref',
+        password: 'referee_password',
         pages: ['scoresheet'],
-        mhubPassword: 'refpass'
+        mhubPassword: 'referee_password'
     }, {
         username: 'scorekeeper',
-        password: 'scorekeeper',
+        password: 'scorekeeper_password',
         pages: ['scoresheet','scores','ranking'],
-        mhubPassword: 'skpass'
+        mhubPassword: 'scorekeeper_password'
     }]
 };

@@ -15,10 +15,10 @@
 	},
 	"bindings": [],
 	"users": {
-		"admin": "admin",
-		"referee": "referee",
-		"scorekeeper": "scorekeeper",
-		"clock": "clock"
+		"admin": "admin_password",
+		"referee": "referee_password",
+		"scorekeeper": "scorekeeper_password",
+		"clock": "clock_password"
 	},
 	"rights": {
 		"": {

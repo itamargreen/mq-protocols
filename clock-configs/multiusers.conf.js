@@ -3,7 +3,7 @@ var clockConfig = {
     node: 'default',
     seconds: 150,
     mhubUsername: 'clock',
-    mhubPassword: 'clock',
+    mhubPassword: 'clock_password',
     tracks: [{
     	source: '30SecstoGo.mp3',
     	start: '30 seconds before stop'
