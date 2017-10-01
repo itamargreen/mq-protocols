@@ -18,7 +18,8 @@
 		"admin": "admin_password",
 		"referee": "referee_password",
 		"scorekeeper": "scorekeeper_password",
-		"clock": "clock_password"
+		"clock": "clock_password",
+		"mc":"mc_password"
 	},
 	"rights": {
 		"": {
