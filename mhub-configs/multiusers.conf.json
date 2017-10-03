@@ -1,0 +1,50 @@
+{
+	"listen": [
+		{
+			"type": "websocket",
+			"port": 13900
+		},
+		{
+			"type": "tcp",
+			"port": 13902
+		}
+	],
+	"verbose": true,
+	"nodes": {
+		"default": "Exchange"
+	},
+	"bindings": [],
+	"users": {
+		"admin": "admin_password",
+		"referee": "referee_password",
+		"scorekeeper": "scorekeeper_password",
+		"clock": "clock_password",
+		"mc":"mc_password"
+	},
+	"rights": {
+		"": {
+			"subscribe": true,
+            "publish": ["table:*","list:*"]
+		},
+		"admin": true,
+		"referee": {
+			"subscribe": true,
+			"publish": {
+				"default": "scores:*"
+			}
+		},
+		"scorekeeper": {
+			"subscribe": true,
+			"publish": {
+				"default": "scores:*"
+			}	
+		},
+		"clock": {
+			"subscribe": true,
+			"publish": {
+				"default": ["clock:*"]
+			}	
+		}
+	},
+	"storage": "./storage/"
+}
