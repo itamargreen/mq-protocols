@@ -16,24 +16,26 @@
 	"bindings": [],
 	"users": {
 		"admin": "admin_password",
-		"referee": "referee_password",
-		"scorekeeper": "scorekeeper_password",
+		"ref": "referee_password",
+		"sk": "scorekeeper_password",
 		"clock": "clock_password",
 		"mc":"mc_password"
 	},
 	"rights": {
 		"": {
 			"subscribe": true,
-            "publish": ["table:*","list:*"]
+            "publish": {
+            	"default": ["table:*", "list:*"]
+            }
 		},
 		"admin": true,
-		"referee": {
+		"ref": {
 			"subscribe": true,
 			"publish": {
 				"default": "scores:*"
 			}
 		},
-		"scorekeeper": {
+		"sk": {
 			"subscribe": true,
 			"publish": {
 				"default": "scores:*"
@@ -44,6 +46,12 @@
 			"publish": {
 				"default": ["clock:*"]
 			}	
+		},
+		"mc": {
+			"subscribe": true,
+            "publish": {
+            	"default": ["table:*", "list:*"]
+            }
 		}
 	},
 	"storage": "./storage/"
