@@ -19,7 +19,7 @@ passwordsMap.forEach(module => {
 		} else {
 			var newFileContent = data.toString();
 			module.passwords.forEach(password => {
-				newFileContent = newFileContent.replace(password.target, generatePassword(password.key));
+				newFileContent = newFileContent.replace(new RegExp(password.target, 'g'), generatePassword(password.key));
 			});
 
 			fs.writeFile(filePath, newFileContent, function(err) {
