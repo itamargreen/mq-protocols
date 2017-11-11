@@ -25,7 +25,21 @@
 		"": {
 			"subscribe": true,
             "publish": {
-            	"default": ["table:*", "list:*"]
+            	"default": [
+                "background:*",
+                "camera:*",
+                "gallery:*",
+                "clock:*",
+                "time:*",
+                "twitter:*",
+                "lowThird:*",
+                "list:*",
+                "sprite:*",
+                "css:*",
+                "table:*",
+                "geometry:*",
+                "emojione:*"
+              ]
             }
 		},
 		"admin": true,
