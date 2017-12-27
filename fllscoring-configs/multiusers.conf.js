@@ -10,7 +10,7 @@ module.exports = {
     users: [{
         username: 'admin',
         password: 'admin_password',
-        pages: ['scoresheet','teams','scores','ranking','settings','clock'],
+        pages: ['scoresheet','scores','tournament','settings'],
         mhubPassword: 'admin_password'
     }, {
         username: 'ref',
