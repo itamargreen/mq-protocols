@@ -1,6 +1,6 @@
 {
   "name": "@first-lego-league/protocols",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "For our FIRST LEGO League architecture, we use separate systems that can communicate via JSON REST api's or via websocket protocol. These are described here",
   "main": "index.js",
   "scripts": {
