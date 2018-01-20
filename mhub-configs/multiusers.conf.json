@@ -17,7 +17,7 @@
 	"users": {
 		"admin": "admin_password",
 		"ref": "referee_password",
-		"sk": "scorekeeper_password",
+		"scorekeeper": "scorekeeper_password",
 		"clock": "clock_password",
 		"mc":"mc_password"
 	},
