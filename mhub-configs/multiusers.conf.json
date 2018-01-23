@@ -46,7 +46,7 @@
 		"ref": {
 			"subscribe": true,
 			"publish": {
-				"default": "scores:*"
+				"default": ["scores:*", "settings:*"]
 			}
 		},
 		"scorekeeper": {
