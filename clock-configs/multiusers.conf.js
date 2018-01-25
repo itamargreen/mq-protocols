@@ -5,13 +5,16 @@ var clockConfig = {
     mhubUsername: 'clock',
     mhubPassword: 'clock_password',
     tracks: [{
-    	source: '30SecstoGo.mp3',
-    	start: '30 seconds before stop'
+        name: '30secs_left_track',
+        source: '30SecstoGo.mp3',
+        start: '120 seconds after start'
     },{
-    	source: 'End.mp3',
-    	start: 'on stop'
+        name: 'end_track',
+        source: 'End.mp3',
+        start: 'on stop'
     },{
-    	source: 'Start.mp3',
+        name: 'start_track',
+        source: 'Start.mp3',
         start: 'on start',
     }]
 };
